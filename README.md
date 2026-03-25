@@ -8,7 +8,7 @@ Gen fake tls with spec SNI (microsoft.com, ya.ru, yandex.com, google.com)
 docker run --rm nineseconds/mtg:2 generate-secret --hex microsoft.com
 ```
 Copy hex output like "ee473ce5d4958eb5f968c87680a23854..."
-Create new Toml
+Create new Toml "nano config.toml"
 ```Toml
 secret = "ee473ce5d4958eb5f968c87680a23854......."
 bind-to = "0.0.0.0:4443"
