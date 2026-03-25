@@ -27,4 +27,19 @@ docker run -d \
   ```
   docker exec mtproxy /mtg access /config.toml
   ```
-  
+  Output like
+  ```
+  url: tg://proxy?server=IP....&port=4443&secret=ddSECRET....
+  ```
+Config Firewall 
+```
+sudo ufw allow 4443/tcp
+sudo ufw reload
+sudo ufw enable
+```
+
+
+
+
+
+
