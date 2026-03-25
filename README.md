@@ -11,7 +11,7 @@ Copy hex output like "ee473ce5d4958eb5f968c87680a23854..."
 
 Create new Toml 
 ```
-"nano config.toml"
+nano config.toml
 ```
 ```Toml
 secret = "ee473ce5d4958eb5f968c87680a23854......."
