@@ -1,18 +1,19 @@
 ## MTproxy
-Config directiry
+Create onfig directory
 ```bash
 mkdir ~/mtproxy && cd ~/mtproxy
 ```
-Gen fake tls with spec SNI (microsoft.com, ya.ru, yandex.com, google.com)
+Gen fake tls with spec SNI (microsoft.com, ya.ru, yandex.com, google.com...)
 ```bash
 docker run --rm nineseconds/mtg:2 generate-secret --hex microsoft.com
 ```
-Copy hex output like "ee473ce5d4958eb5f968c87680a23854..."
+Copy *secret* hex output: like "ee473ce5d4958eb5f968c87680a23854..."
 
 Create new Toml 
 ```
 nano config.toml
 ```
+Put in, i use 4443 port
 ```Toml
 secret = "ee473ce5d4958eb5f968c87680a23854......."
 bind-to = "0.0.0.0:4443"
@@ -27,11 +28,11 @@ docker run -d \
   -p 4443:4443 \
   nineseconds/mtg:2
   ```
-  Generate link
+Generate link
   ```
   docker exec mtproxy /mtg access /config.toml
   ```
-  Output like
+ Output like
   ```
   url: tg://proxy?server=IP....&port=4443&secret=ddSECRET....
   ```
